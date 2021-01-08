@@ -70,6 +70,35 @@ export const OrderAPI = superclass =>
             const order = await this.delete(url);
             return order;
         }
+
+        /**
+         * Creates a PaymentIntent entity within Stripe.
+         * Saves the PaymentIntent ID and the client secret in the order.
+         *
+         * @memberof OrderAPI
+         * @param {String} id The id of the order.
+         * @returns {Promise} The updated order.
+         */
+        async createStripePaymentIntent(name) {
+            const url = this.baseUrl + `orders/${name}/stripe`;
+            const order = await this.put(url);
+            return order;
+        }
+
+        /**
+         * Updates an order, marking it as paid, if and only if:
+         *  - a PaymentIntent ID exists in the order
+         *  - Stripe confirms that PaymentIntent was successful
+         *
+         * @memberof OrderAPI
+         * @param {String} id The id of the order.
+         * @returns {Promise} The updated order.
+         */
+        async markOrderAsPaid(name) {
+            const url = this.baseUrl + `orders/${name}/pay`;
+            const order = await this.put(url);
+            return order;
+        }
     };
 
 export default OrderAPI;
