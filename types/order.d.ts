@@ -68,11 +68,12 @@ export interface OrderPatch {
     readonly payment?: Record<string, string>;
 }
 
-
 export declare class OrderAPI {
     listOrders(options: Options): Array<Order>;
     getOrder(id: string): Order;
     createOrder(payload: OrderCreate): Order;
     updateOrder(id: string, payload: OrderPatch): Order;
     deleteOrder(id: string): Order;
+    paypalOrder(id: string): Order;
+    payOrder(id: string): Order;
 }
