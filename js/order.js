@@ -79,8 +79,8 @@ export const OrderAPI = superclass =>
          * @param {String} id The id of the order.
          * @returns {Promise} The updated order.
          */
-        async createStripePaymentIntent(name) {
-            const url = this.baseUrl + `orders/${name}/stripe`;
+        async createStripePaymentIntent(id) {
+            const url = this.baseUrl + `orders/${id}/stripe`;
             const order = await this.put(url);
             return order;
         }
@@ -94,8 +94,8 @@ export const OrderAPI = superclass =>
          * @param {String} id The id of the order.
          * @returns {Promise} The updated order.
          */
-        async markOrderAsPaid(name) {
-            const url = this.baseUrl + `orders/${name}/pay`;
+        async markOrderAsPaid(id) {
+            const url = this.baseUrl + `orders/${id}/pay`;
             const order = await this.put(url);
             return order;
         }
