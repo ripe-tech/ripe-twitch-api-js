@@ -56,9 +56,20 @@ export interface Order {
     readonly meta: Record<string, unknown>;
 }
 
+export interface OrderCreate {
+    readonly user?: string;
+    readonly name?: string;
+    readonly shippingAddress?: string;
+    readonly billingAddress?: string;
+    readonly productQuery?: string;
+    readonly amount?: number;
+    readonly currency?: Currency;
+    readonly status?: Status;
+}
+
 export interface OrderPatch {
     readonly user?: string;
-    readonly name?: Person;
+    readonly name?: string;
     readonly shippingAddress?: string;
     readonly billingAddress?: string;
     readonly productQuery?: string;
