@@ -22,7 +22,7 @@ export const OrderAPI = superclass =>
          * Returns the order with the provided id.
          *
          * @memberof OrderAPI
-         * @param {String} name The id of the order.
+         * @param {String} id The id of the order.
          * @returns {Promise} The order requested.
          */
         async getOrder(id) {
@@ -48,7 +48,7 @@ export const OrderAPI = superclass =>
          * Updates the order with the provided information.
          *
          * @memberof OrderAPI
-         * @param {String} name The id of the order.
+         * @param {String} id The id of the order.
          * @param {Object} payload An object that contains information about an order.
          * @returns {Promise} The updated order.
          */
@@ -59,14 +59,14 @@ export const OrderAPI = superclass =>
         }
 
         /**
-         * Deletes the order with the provided name.
+         * Deletes the order with the provided id.
          *
          * @memberof OrderAPI
-         * @param {String} name The id of the order.
+         * @param {String} id The id of the order.
          * @returns {Promise} Empty response.
          */
-        async deleteOrder(name) {
-            const url = this.baseUrl + `orders/${name}`;
+        async deleteOrder(id) {
+            const url = this.baseUrl + `orders/${id}`;
             const order = await this.delete(url);
             return order;
         }
