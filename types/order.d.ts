@@ -42,6 +42,7 @@ export interface Order {
 }
 
 export interface OrderCreate {
+    readonly id?: number;
     readonly user: string;
     readonly name: string;
     readonly email: string;
@@ -51,6 +52,9 @@ export interface OrderCreate {
     readonly amount: number;
     readonly currency?: string;
     readonly status?: Status;
+    readonly created?: number;
+    readonly modified?: number;
+    readonly meta?: Record<string, unknown>;
 }
 
 export interface OrderPatch {
