@@ -3,7 +3,7 @@ import { OrderAPI } from "./order";
 export interface API extends OrderAPI {}
 
 export declare class API implements API {
-    constructor(kwargs?: object);
+    constructor(kwargs?: Record<string, unknown>);
     load(): Promise<void>;
-    info(): Promise<object>;
+    info(): Promise<Record<string, unknown>>;
 }

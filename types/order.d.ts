@@ -1,5 +1,5 @@
 export interface Options {
-    readonly fields?: Array<string>,
+    readonly fields?: string[],
     readonly eager?: Boolean,
     readonly eagerL?: Boolean,
     readonly map?: Boolean,
@@ -10,7 +10,7 @@ export interface Options {
     readonly resolveA?: Boolean,
     readonly skip?: Number,
     readonly limit?: Number,
-    readonly sort?: Array<Object>,
+    readonly sort?: unknown[][],
     readonly raiseE?: Boolean,
 }
 
@@ -70,7 +70,7 @@ export interface OrderPatch {
 }
 
 export declare class OrderAPI {
-    listOrders(options: Options): Array<Order>;
+    listOrders(options: Options): Order[];
     getOrder(id: string): Order;
     createOrder(payload: OrderCreate): Order;
     updateOrder(id: string, payload: OrderPatch): Order;
