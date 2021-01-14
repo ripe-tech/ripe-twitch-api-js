@@ -29,6 +29,7 @@ export interface Order {
     readonly id: string;
     readonly user: string;
     readonly name: string;
+    readonly email: string;
     readonly shippingAddress: string;
     readonly billingAddress: string;
     readonly productQuery: string;
@@ -41,12 +42,13 @@ export interface Order {
 }
 
 export interface OrderCreate {
-    readonly user?: string;
-    readonly name?: string;
-    readonly shippingAddress?: string;
-    readonly billingAddress?: string;
-    readonly productQuery?: string;
-    readonly amount?: number;
+    readonly user: string;
+    readonly name: string;
+    readonly email: string;
+    readonly shippingAddress: string;
+    readonly billingAddress: string;
+    readonly productQuery: string;
+    readonly amount: number;
     readonly currency?: string;
     readonly status?: Status;
 }
@@ -54,6 +56,7 @@ export interface OrderCreate {
 export interface OrderPatch {
     readonly user?: string;
     readonly name?: string;
+    readonly email?: string;
     readonly shippingAddress?: string;
     readonly billingAddress?: string;
     readonly productQuery?: string;
