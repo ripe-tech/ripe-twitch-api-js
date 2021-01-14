@@ -14,21 +14,6 @@ export interface Options {
     readonly raiseE?: Boolean,
 }
 
-export enum Currency {
-    EUR = "EUR",
-    USD = "USD",
-    GBP = "GBP",
-    BRL = "BRL",
-    CAD = "CAD",
-    AUD = "AUD",
-    JPY = "JPY",
-    RUB = "RUB",
-    KRW = "KRW",
-    CHF = "CHF",
-    SGD = "SGD",
-    MXN = "MXN"
-}
-
 export enum Status {
     created = "created",
     waitingPayment = "waiting_payment",
@@ -48,9 +33,8 @@ export interface Order {
     readonly billingAddress: string;
     readonly productQuery: string;
     readonly amount: number;
-    readonly currency: Currency;
+    readonly currency: string;
     readonly status: Status;
-    readonly payment: Record<string, string>;
     readonly created: number;
     readonly modified: number;
     readonly meta: Record<string, unknown>;
@@ -63,7 +47,7 @@ export interface OrderCreate {
     readonly billingAddress?: string;
     readonly productQuery?: string;
     readonly amount?: number;
-    readonly currency?: Currency;
+    readonly currency?: string;
     readonly status?: Status;
 }
 
@@ -74,11 +58,9 @@ export interface OrderPatch {
     readonly billingAddress?: string;
     readonly productQuery?: string;
     readonly amount?: number;
-    readonly currency?: Currency;
+    readonly currency?: string;
     readonly status?: Status;
-    readonly payment?: Record<string, string>;
 }
-
 
 export declare class OrderAPI {
     listOrders(options: Options): Array<Order>;
