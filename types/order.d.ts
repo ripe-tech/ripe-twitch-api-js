@@ -1,5 +1,5 @@
 export interface Options {
-    readonly fields?: Array<string>,
+    readonly fields?: string[],
     readonly eager?: Boolean,
     readonly eagerL?: Boolean,
     readonly map?: Boolean,
@@ -10,23 +10,8 @@ export interface Options {
     readonly resolveA?: Boolean,
     readonly skip?: Number,
     readonly limit?: Number,
-    readonly sort?: Array<Object>,
+    readonly sort?: unknown[][],
     readonly raiseE?: Boolean,
-}
-
-export enum Currency {
-    EUR = "EUR",
-    USD = "USD",
-    GBP = "GBP",
-    BRL = "BRL",
-    CAD = "CAD",
-    AUD = "AUD",
-    JPY = "JPY",
-    RUB = "RUB",
-    KRW = "KRW",
-    CHF = "CHF",
-    SGD = "SGD",
-    MXN = "MXN"
 }
 
 export enum Status {
@@ -44,43 +29,48 @@ export interface Order {
     readonly id: string;
     readonly user: string;
     readonly name: string;
+    readonly email: string;
     readonly shippingAddress: string;
     readonly billingAddress: string;
     readonly productQuery: string;
     readonly amount: number;
-    readonly currency: Currency;
+    readonly currency: string;
     readonly status: Status;
-    readonly payment: Record<string, string>;
     readonly created: number;
     readonly modified: number;
     readonly meta: Record<string, unknown>;
 }
 
 export interface OrderCreate {
-    readonly user?: string;
-    readonly name?: string;
-    readonly shippingAddress?: string;
-    readonly billingAddress?: string;
-    readonly productQuery?: string;
-    readonly amount?: number;
-    readonly currency?: Currency;
+    readonly id?: number;
+    readonly user: string;
+    readonly name: string;
+    readonly email: string;
+    readonly shippingAddress: string;
+    readonly billingAddress: string;
+    readonly productQuery: string;
+    readonly amount: number;
+    readonly currency?: string;
     readonly status?: Status;
+    readonly created?: number;
+    readonly modified?: number;
+    readonly meta?: Record<string, unknown>;
 }
 
 export interface OrderPatch {
     readonly user?: string;
     readonly name?: string;
+    readonly email?: string;
     readonly shippingAddress?: string;
     readonly billingAddress?: string;
     readonly productQuery?: string;
     readonly amount?: number;
-    readonly currency?: Currency;
+    readonly currency?: string;
     readonly status?: Status;
-    readonly payment?: Record<string, string>;
 }
 
 export declare class OrderAPI {
-    listOrders(options: Options): Array<Order>;
+    listOrders(options: Options): Order[];
     getOrder(id: string): Order;
     createOrder(payload: OrderCreate): Order;
     updateOrder(id: string, payload: OrderPatch): Order;
