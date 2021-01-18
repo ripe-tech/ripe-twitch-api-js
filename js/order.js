@@ -82,7 +82,7 @@ export const OrderAPI = superclass =>
          */
         async paypalOrder(id, payload) {
             const url = this.baseUrl + `orders/${id}/paypal`;
-            const order = await this.post(url, { dataJ: payload });
+            const order = await this.put(url, { dataJ: payload });
             return order;
         }
 
