@@ -70,6 +70,34 @@ export const OrderAPI = superclass =>
             const order = await this.delete(url);
             return order;
         }
+
+        /**
+         * Creates a PayPal payment for the order with the provided id.
+         *
+         * @memberof OrderAPI
+         * @param {String} id The id of the order.
+         * @param {Object} payload An object that contains information about the return URL
+         * to redirect to after the PayPal authentication process.
+         * @returns {Promise} The redirect URL to confirm the payment.
+         */
+        async paypalOrder(id, payload) {
+            const url = this.baseUrl + `orders/${id}/paypal`;
+            const order = await this.put(url, { dataJ: payload });
+            return order;
+        }
+
+        /**
+         * Completes the payment process for the order with the provided id.
+         *
+         * @memberof OrderAPI
+         * @param {String} id The id of the order.
+         * @returns {Promise} The updated order.
+         */
+        async payOrder(id) {
+            const url = this.baseUrl + `orders/${id}/pay`;
+            const order = await this.put(url);
+            return order;
+        }
     };
 
 export default OrderAPI;
