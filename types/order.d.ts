@@ -75,6 +75,6 @@ export declare class OrderAPI {
     createOrder(payload: OrderCreate): Order;
     updateOrder(id: string, payload: OrderPatch): Order;
     deleteOrder(id: string): Order;
-    paypalOrder(id: string): Order;
+    paypalOrder(id: string): { redirectUrl: string };
     payOrder(id: string): Order;
 }

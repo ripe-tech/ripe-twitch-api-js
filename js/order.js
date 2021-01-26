@@ -76,9 +76,9 @@ export const OrderAPI = superclass =>
          *
          * @memberof OrderAPI
          * @param {String} id The id of the order.
-         * @param {Object} payload An object that contains information about the return URl
+         * @param {Object} payload An object that contains information about the return URL
          * to redirect to after the PayPal authentication process.
-         * @returns {Promise} The updated order.
+         * @returns {Promise} The redirect URL to confirm the payment.
          */
         async paypalOrder(id, payload) {
             const url = this.baseUrl + `orders/${id}/paypal`;
