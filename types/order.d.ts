@@ -75,6 +75,6 @@ export declare class OrderAPI {
     createOrder(payload: OrderCreate): Order;
     updateOrder(id: string, payload: OrderPatch): Order;
     deleteOrder(id: string): Order;
-    createStripePaymentIntent(id: string): Order;
-    markOrderAsPaid(id: string): Order;
+    stripeOrder(id: string): { clientSecret: string };
+    payOrder(id: string): Order;
 }

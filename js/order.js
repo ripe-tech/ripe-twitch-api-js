@@ -72,29 +72,28 @@ export const OrderAPI = superclass =>
         }
 
         /**
-         * Creates a PaymentIntent entity within Stripe.
-         * Saves the PaymentIntent ID and the client secret in the order.
+         * Creates a Stripe payment for the order with the provided id.
          *
          * @memberof OrderAPI
          * @param {String} id The id of the order.
-         * @returns {Promise} The updated order.
+         * @param {Object} payload An object that contains information about the return URL
+         * to redirect to after the PayPal authentication process.
+         * @returns {Promise} The redirect URL to confirm the payment.
          */
-        async createStripePaymentIntent(id) {
+        async stripeOrder(id, payload) {
             const url = this.baseUrl + `orders/${id}/stripe`;
-            const order = await this.put(url);
+            const order = await this.put(url, { dataJ: payload });
             return order;
         }
 
         /**
-         * Updates an order, marking it as paid, if and only if:
-         *  - a PaymentIntent ID exists in the order
-         *  - Stripe confirms that PaymentIntent was successful
+         * Completes the payment process for the order with the provided id.
          *
          * @memberof OrderAPI
          * @param {String} id The id of the order.
          * @returns {Promise} The updated order.
          */
-        async markOrderAsPaid(id) {
+        async payOrder(id) {
             const url = this.baseUrl + `orders/${id}/pay`;
             const order = await this.put(url);
             return order;
