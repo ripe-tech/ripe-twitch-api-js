@@ -1,17 +1,12 @@
-export interface Options {
-    readonly fields?: string[],
-    readonly eager?: boolean,
-    readonly eagerL?: boolean,
-    readonly map?: boolean,
-    readonly rules?: boolean,
-    readonly meta?: boolean,
-    readonly build?: boolean,
-    readonly fill?: boolean,
-    readonly resolveA?: boolean,
-    readonly skip?: number,
-    readonly limit?: number,
-    readonly sort?: unknown[][],
-    readonly raiseE?: boolean,
+import { APIOptions } from "yonius";
+
+export interface Address {
+    readonly firstName: string;
+    readonly lastName: string;
+    readonly address: string;
+    readonly postcode: string;
+    readonly country: string;
+    readonly state: string;
 }
 
 export enum Status {
@@ -28,10 +23,9 @@ export enum Status {
 export interface Order {
     readonly id: string;
     readonly user: string;
-    readonly name: string;
     readonly email: string;
-    readonly shippingAddress: string;
-    readonly billingAddress: string;
+    readonly shippingAddress: Address;
+    readonly billingAddress: Address;
     readonly productQuery: string;
     readonly amount: number;
     readonly currency: string;
@@ -44,10 +38,9 @@ export interface Order {
 export interface OrderCreate {
     readonly id?: number;
     readonly user: string;
-    readonly name: string;
     readonly email: string;
-    readonly shippingAddress: string;
-    readonly billingAddress: string;
+    readonly shippingAddress: Address;
+    readonly billingAddress: Address;
     readonly productQuery: string;
     readonly amount: number;
     readonly currency?: string;
@@ -59,10 +52,9 @@ export interface OrderCreate {
 
 export interface OrderPatch {
     readonly user?: string;
-    readonly name?: string;
     readonly email?: string;
-    readonly shippingAddress?: string;
-    readonly billingAddress?: string;
+    readonly shippingAddress?: Address;
+    readonly billingAddress?: Address;
     readonly productQuery?: string;
     readonly amount?: number;
     readonly currency?: string;
@@ -70,7 +62,7 @@ export interface OrderPatch {
 }
 
 export declare class OrderAPI {
-    listOrders(options: Options): Order[];
+    listOrders(options: APIOptions): Order[];
     getOrder(id: string): Order;
     createOrder(payload: OrderCreate): Order;
     updateOrder(id: string, payload: OrderPatch): Order;
