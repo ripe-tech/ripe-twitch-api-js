@@ -63,8 +63,8 @@ export interface OrderPatch {
 
 export declare class OrderAPI {
     listOrders(options: APIOptions): Order[];
-    getOrder(id: string): Order;
     createOrder(payload: OrderCreate): Order;
+    getOrder(id: string): Order;
     updateOrder(id: string, payload: OrderPatch): Order;
     deleteOrder(id: string): Order;
     paypalOrder(id: string): { redirectUrl: string };

@@ -19,19 +19,6 @@ export const OrderAPI = superclass =>
         }
 
         /**
-         * Returns the order with the provided id.
-         *
-         * @memberof OrderAPI
-         * @param {String} id The id of the order.
-         * @returns {Promise} The order requested.
-         */
-        async getOrder(id) {
-            const url = this.baseUrl + `orders/${id}`;
-            const order = await this.get(url);
-            return order;
-        }
-
-        /**
          * Creates a new order with the provided information.
          *
          * @memberof OrderAPI
@@ -41,6 +28,19 @@ export const OrderAPI = superclass =>
         async createOrder(payload) {
             const url = this.baseUrl + "orders";
             const order = await this.post(url, { dataJ: payload });
+            return order;
+        }
+
+        /**
+         * Returns the order with the provided id.
+         *
+         * @memberof OrderAPI
+         * @param {String} id The id of the order.
+         * @returns {Promise} The order requested.
+         */
+        async getOrder(id) {
+            const url = this.baseUrl + `orders/${id}`;
+            const order = await this.get(url);
             return order;
         }
 
