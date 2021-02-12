@@ -1,4 +1,4 @@
-import { Options } from "yonius";
+import { APIOptions } from "yonius";
 
 export interface Address {
     readonly firstName: string;
@@ -62,7 +62,7 @@ export interface OrderPatch {
 }
 
 export declare class OrderAPI {
-    listOrders(options: Options): Order[];
+    listOrders(options: APIOptions): Order[];
     getOrder(id: string): Order;
     createOrder(payload: OrderCreate): Order;
     updateOrder(id: string, payload: OrderPatch): Order;
