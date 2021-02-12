@@ -23,10 +23,9 @@ export enum Status {
 export interface Order {
     readonly id: string;
     readonly user: string;
-    readonly name: string;
     readonly email: string;
-    readonly shippingAddress: string;
-    readonly billingAddress: string;
+    readonly shippingAddress: Address;
+    readonly billingAddress: Address;
     readonly productQuery: string;
     readonly amount: number;
     readonly currency: string;
@@ -39,10 +38,9 @@ export interface Order {
 export interface OrderCreate {
     readonly id?: number;
     readonly user: string;
-    readonly name: string;
     readonly email: string;
-    readonly shippingAddress: string;
-    readonly billingAddress: string;
+    readonly shippingAddress: Address;
+    readonly billingAddress: Address;
     readonly productQuery: string;
     readonly amount: number;
     readonly currency?: string;
@@ -54,10 +52,9 @@ export interface OrderCreate {
 
 export interface OrderPatch {
     readonly user?: string;
-    readonly name?: string;
     readonly email?: string;
-    readonly shippingAddress?: string;
-    readonly billingAddress?: string;
+    readonly shippingAddress?: Address;
+    readonly billingAddress?: Address;
     readonly productQuery?: string;
     readonly amount?: number;
     readonly currency?: string;
