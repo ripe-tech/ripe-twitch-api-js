@@ -67,7 +67,8 @@ export const BrandAPI = superclass =>
          */
         async deleteBrand(name) {
             const url = this.baseUrl + `brands/${name}`;
-            return await this.delete(url);
+            const brand = await this.delete(url);
+            return brand;
         }
     };
 

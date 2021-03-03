@@ -67,7 +67,8 @@ export const ProductCollectionAPI = superclass =>
          */
         async deleteProductCollection(id) {
             const url = this.baseUrl + `product_collections/${id}`;
-            return await this.delete(url);
+            const productCollection = await this.delete(url);
+            return productCollection;
         }
     };
 

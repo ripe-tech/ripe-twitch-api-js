@@ -67,7 +67,8 @@ export const StreamerAPI = superclass =>
          */
         async deleteStreamer(username) {
             const url = this.baseUrl + `streamers/${username}`;
-            return await this.delete(url);
+            const streamer = await this.delete(url);
+            return streamer;
         }
     };
 
