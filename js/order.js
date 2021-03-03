@@ -67,8 +67,7 @@ export const OrderAPI = superclass =>
          */
         async deleteOrder(id) {
             const url = this.baseUrl + `orders/${id}`;
-            const order = await this.delete(url);
-            return order;
+            return await this.delete(url);
         }
 
         /**

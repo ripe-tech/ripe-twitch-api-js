@@ -67,8 +67,7 @@ export const DropAPI = superclass =>
          */
         async deleteDrop(id) {
             const url = this.baseUrl + `drops/${id}`;
-            const drop = await this.delete(url);
-            return drop;
+            return await this.delete(url);
         }
     };
 

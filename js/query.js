@@ -67,8 +67,7 @@ export const QueryAPI = superclass =>
          */
         async deleteQuery(id) {
             const url = this.baseUrl + `queries/${id}`;
-            const query = await this.delete(url);
-            return query;
+            return await this.delete(url);
         }
     };
 

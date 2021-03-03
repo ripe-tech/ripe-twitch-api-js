@@ -67,8 +67,7 @@ export const CollectionAPI = superclass =>
          */
         async deleteCollection(id) {
             const url = this.baseUrl + `collections/${id}`;
-            const collection = await this.delete(url);
-            return collection;
+            return await this.delete(url);
         }
     };
 

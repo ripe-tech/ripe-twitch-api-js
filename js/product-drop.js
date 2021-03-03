@@ -67,8 +67,7 @@ export const ProductDropAPI = superclass =>
          */
         async deleteProductDrop(id) {
             const url = this.baseUrl + `product_drops/${id}`;
-            const productDrop = await this.delete(url);
-            return productDrop;
+            return await this.delete(url);
         }
     };
 
