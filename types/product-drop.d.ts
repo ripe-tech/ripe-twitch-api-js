@@ -28,9 +28,9 @@ export interface ProductDropPatch {
 }
 
 export declare class ProductDropAPI {
-    listProductDrops(options: APIOptions): ProductDrop[];
-    createProductDrop(payload: ProductDropCreate): ProductDrop;
-    getProductDrop(id: string): ProductDrop;
-    updateProductDrop(id: string, payload: ProductDropPatch): ProductDrop;
-    deleteProductDrop(id: string): ProductDrop;
+    listProductDrops(options: APIOptions): Promise<ProductDrop[]>;
+    createProductDrop(payload: ProductDropCreate): Promise<ProductDrop>;
+    getProductDrop(id: string): Promise<ProductDrop>;
+    updateProductDrop(id: string, payload: ProductDropPatch): Promise<ProductDrop>;
+    deleteProductDrop(id: string): Promise<void>;
 }

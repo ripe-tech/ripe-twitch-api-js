@@ -23,9 +23,9 @@ export interface BrandPatch {
 }
 
 export declare class BrandAPI {
-    listBrands(options: APIOptions): Brand[];
-    createBrand(payload: BrandCreate): Brand;
-    getBrand(name: string): Brand;
-    updateBrand(name: string, payload: BrandPatch): Brand;
-    deleteBrand(name: string): Brand;
+    listBrands(options: APIOptions): Promise<Brand[]>;
+    createBrand(payload: BrandCreate): Promise<Brand>;
+    getBrand(name: string): Promise<Brand>;
+    updateBrand(name: string, payload: BrandPatch): Promise<Brand>;
+    deleteBrand(name: string): Promise<void>;
 }

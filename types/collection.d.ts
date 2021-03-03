@@ -30,9 +30,9 @@ export interface CollectionPatch {
 }
 
 export declare class CollectionAPI {
-    listCollections(options: APIOptions): Collection[];
-    createCollection(payload: CollectionCreate): Collection;
-    getCollection(id: string): Collection;
-    updateCollection(id: string, payload: CollectionPatch): Collection;
-    deleteCollection(id: string): Collection;
+    listCollections(options: APIOptions): Promise<Collection[]>;
+    createCollection(payload: CollectionCreate): Promise<Collection>;
+    getCollection(id: string): Promise<Collection>;
+    updateCollection(id: string, payload: CollectionPatch): Promise<Collection>;
+    deleteCollection(id: string): Promise<void>;
 }

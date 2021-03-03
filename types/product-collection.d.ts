@@ -24,9 +24,9 @@ export interface ProductCollectionPatch {
 }
 
 export declare class ProductCollectionAPI {
-    listProductCollections(options: APIOptions): ProductCollection[];
-    createProductCollection(payload: ProductCollectionCreate): ProductCollection;
-    getProductCollection(id: string): ProductCollection;
-    updateProductCollection(id: string, payload: ProductCollectionPatch): ProductCollection;
-    deleteProductCollection(id: string): ProductCollection;
+    listProductCollections(options: APIOptions): Promise<ProductCollection[]>;
+    createProductCollection(payload: ProductCollectionCreate): Promise<ProductCollection>;
+    getProductCollection(id: string): Promise<ProductCollection>;
+    updateProductCollection(id: string, payload: ProductCollectionPatch): Promise<ProductCollection>;
+    deleteProductCollection(id: string): Promise<void>;
 }

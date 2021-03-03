@@ -37,9 +37,9 @@ export interface DropPatch {
 }
 
 export declare class DropAPI {
-    listDrops(options: APIOptions): Drop[];
-    createDrop(payload: DropCreate): Drop;
-    getDrop(id: string): Drop;
-    updateDrop(id: string, payload: DropPatch): Drop;
-    deleteDrop(id: string): Drop;
+    listDrops(options: APIOptions): Promise<Drop[]>;
+    createDrop(payload: DropCreate): Promise<Drop>;
+    getDrop(id: string): Promise<Drop>;
+    updateDrop(id: string, payload: DropPatch): Promise<Drop>;
+    deleteDrop(id: string): Promise<void>;
 }

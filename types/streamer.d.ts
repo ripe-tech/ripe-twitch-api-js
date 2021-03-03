@@ -23,9 +23,9 @@ export interface StreamerPatch {
 }
 
 export declare class StreamerAPI {
-    listStreamers(options: APIOptions): Streamer[];
-    createStreamer(payload: StreamerCreate): Streamer;
-    getStreamer(username: string): Streamer;
-    updateStreamer(username: string, payload: StreamerPatch): Streamer;
-    deleteStreamer(username: string): Streamer;
+    listStreamers(options: APIOptions): Promise<Streamer[]>;
+    createStreamer(payload: StreamerCreate): Promise<Streamer>;
+    getStreamer(username: string): Promise<Streamer>;
+    updateStreamer(username: string, payload: StreamerPatch): Promise<Streamer>;
+    deleteStreamer(username: string): Promise<void>;
 }

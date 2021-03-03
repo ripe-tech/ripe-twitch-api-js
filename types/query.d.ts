@@ -27,9 +27,9 @@ export interface QueryPatch {
 }
 
 export declare class QueryAPI {
-    listQueries(options: APIOptions): Query[];
-    createQuery(payload: QueryCreate): Query;
-    getQuery(id: string): Query;
-    updateQuery(id: string, payload: QueryPatch): Query;
-    deleteQuery(id: string): Query;
+    listQueries(options: APIOptions): Promise<Query[]>;
+    createQuery(payload: QueryCreate): Promise<Query>;
+    getQuery(id: string): Promise<Query>;
+    updateQuery(id: string, payload: QueryPatch): Promise<Query>;
+    deleteQuery(id: string): Promise<void>;
 }
