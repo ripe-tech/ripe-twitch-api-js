@@ -22,7 +22,7 @@ export const CollectionAPI = superclass =>
          * Creates a new collection with the provided information.
          *
          * @memberof CollectionAPI
-         * @param {Collection} payload An object that contains information about an collection.
+         * @param {Collection} payload An object that contains information about a collection.
          * @returns {Promise} The created collection.
          */
         async createCollection(payload) {
@@ -49,7 +49,7 @@ export const CollectionAPI = superclass =>
          *
          * @memberof CollectionAPI
          * @param {String} id The id of the collection.
-         * @param {Object} payload An object that contains information about an collection.
+         * @param {Object} payload An object that contains information about a collection.
          * @returns {Promise} The updated collection.
          */
         async updateCollection(id, payload) {

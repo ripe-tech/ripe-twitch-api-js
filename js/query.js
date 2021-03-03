@@ -22,7 +22,7 @@ export const QueryAPI = superclass =>
          * Creates a new query with the provided information.
          *
          * @memberof QueryAPI
-         * @param {Query} payload An object that contains information about an query.
+         * @param {Query} payload An object that contains information about a query.
          * @returns {Promise} The created query.
          */
         async createQuery(payload) {
@@ -49,7 +49,7 @@ export const QueryAPI = superclass =>
          *
          * @memberof QueryAPI
          * @param {String} id The id of the query.
-         * @param {Object} payload An object that contains information about an query.
+         * @param {Object} payload An object that contains information about a query.
          * @returns {Promise} The updated query.
          */
         async updateQuery(id, payload) {

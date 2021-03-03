@@ -22,7 +22,7 @@ export const ProductDropAPI = superclass =>
          * Creates a new product with the provided information.
          *
          * @memberof ProductDropAPI
-         * @param {ProductDrop} payload An object that contains information about an product.
+         * @param {ProductDrop} payload An object that contains information about a product.
          * @returns {Promise} The created product.
          */
         async createProductDrop(payload) {
@@ -49,7 +49,7 @@ export const ProductDropAPI = superclass =>
          *
          * @memberof ProductDropAPI
          * @param {String} id The id of the product_drop.
-         * @param {Object} payload An object that contains information about an product.
+         * @param {Object} payload An object that contains information about a product.
          * @returns {Promise} The updated product.
          */
         async updateProductDrop(id, payload) {

@@ -22,7 +22,7 @@ export const StreamerAPI = superclass =>
          * Creates a new streamer with the provided information.
          *
          * @memberof StreamerAPI
-         * @param {Streamer} payload An object that contains information about an streamer.
+         * @param {Streamer} payload An object that contains information about a streamer.
          * @returns {Promise} The created streamer.
          */
         async createStreamer(payload) {
@@ -49,7 +49,7 @@ export const StreamerAPI = superclass =>
          *
          * @memberof StreamerAPI
          * @param {String} username The username of the streamer.
-         * @param {Object} payload An object that contains information about an streamer.
+         * @param {Object} payload An object that contains information about a streamer.
          * @returns {Promise} The updated streamer.
          */
         async updateStreamer(username, payload) {

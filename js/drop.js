@@ -22,7 +22,7 @@ export const DropAPI = superclass =>
          * Creates a new drop with the provided information.
          *
          * @memberof DropAPI
-         * @param {Drop} payload An object that contains information about an drop.
+         * @param {Drop} payload An object that contains information about a drop.
          * @returns {Promise} The created drop.
          */
         async createDrop(payload) {
@@ -49,7 +49,7 @@ export const DropAPI = superclass =>
          *
          * @memberof DropAPI
          * @param {String} id The id of the drop.
-         * @param {Object} payload An object that contains information about an drop.
+         * @param {Object} payload An object that contains information about a drop.
          * @returns {Promise} The updated drop.
          */
         async updateDrop(id, payload) {

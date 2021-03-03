@@ -22,7 +22,7 @@ export const BrandAPI = superclass =>
          * Creates a new brand with the provided information.
          *
          * @memberof BrandAPI
-         * @param {Brand} payload An object that contains information about an brand.
+         * @param {Brand} payload An object that contains information about a brand.
          * @returns {Promise} The created brand.
          */
         async createBrand(payload) {
@@ -49,7 +49,7 @@ export const BrandAPI = superclass =>
          *
          * @memberof BrandAPI
          * @param {String} name The name of the brand.
-         * @param {Object} payload An object that contains information about an brand.
+         * @param {Object} payload An object that contains information about a brand.
          * @returns {Promise} The updated brand.
          */
         async updateBrand(name, payload) {

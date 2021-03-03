@@ -22,7 +22,7 @@ export const ProductCollectionAPI = superclass =>
          * Creates a new product with the provided information.
          *
          * @memberof ProductCollectionAPI
-         * @param {ProductCollection} payload An object that contains information about an product.
+         * @param {ProductCollection} payload An object that contains information about a product.
          * @returns {Promise} The created product.
          */
         async createProductCollection(payload) {
@@ -49,7 +49,7 @@ export const ProductCollectionAPI = superclass =>
          *
          * @memberof ProductCollectionAPI
          * @param {String} id The id of the product_collection.
-         * @param {Object} payload An object that contains information about an product.
+         * @param {Object} payload An object that contains information about a product.
          * @returns {Promise} The updated product.
          */
         async updateProductCollection(id, payload) {
