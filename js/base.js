@@ -8,7 +8,7 @@ import { ProductDropAPI } from "./product-drop";
 import { QueryAPI } from "./query";
 import { StreamerAPI } from "./streamer";
 
-const BASE_URL = "https://9e66310363a5.ngrok.io/";
+const BASE_URL = "http://localhost:3000/";
 
 export class API extends mix(BaseAPI).with(
     BrandAPI,
