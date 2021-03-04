@@ -72,11 +72,11 @@ export const DropAPI = superclass =>
         }
 
         /**
-         * Adds a new product to this drop's products.
+         * Create a new product and add to this drop's products.
          *
          * @memberof DropAPI
          * @param {String} id The id of the drop.
-         * @param {Drop} payload An object that contains the product ID to add.
+         * @param {ProductDrop} payload An object that contains information about a product.
          * @returns {Promise} The updated drop.
          */
         async addProduct(id, payload) {
