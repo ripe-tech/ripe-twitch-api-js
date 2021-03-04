@@ -80,12 +80,12 @@ export interface OrderPatch {
 }
 
 export declare class OrderAPI {
-    listOrders(options: APIOptions): Order[];
-    createOrder(payload: OrderCreate): Order;
-    getOrder(id: string): Order;
-    updateOrder(id: string, payload: OrderPatch): Order;
-    deleteOrder(id: string): Order;
-    paypalOrder(id: string): { redirectUrl: string };
-    stripeOrder(id: string): { clientSecret: string };
-    payOrder(id: string): Order;
+    listOrders(options: APIOptions): Promise<Order[]>;
+    createOrder(payload: OrderCreate): Promise<Order>;
+    getOrder(id: string): Promise<Order>;
+    updateOrder(id: string, payload: OrderPatch): Promise<Order>;
+    deleteOrder(id: string): Promise<void>;
+    paypalOrder(id: string): Promise<{ redirectUrl: string }>;
+    stripeOrder(id: string): Promise<{ clientSecret: string }>;
+    payOrder(id: string): Promise<Order>;
 }
