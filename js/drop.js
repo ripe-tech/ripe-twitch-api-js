@@ -70,6 +70,33 @@ export const DropAPI = superclass =>
             const drop = await this.delete(url);
             return drop;
         }
+
+        /**
+         * Adds a new product to this drop's products.
+         *
+         * @memberof DropAPI
+         * @param {String} id The id of the drop.
+         * @param {Drop} payload An object that contains the product ID to add.
+         * @returns {Promise} The updated drop.
+         */
+        async addProduct(id, payload) {
+            const url = this.baseUrl + `drops/${id}/product`;
+            const drop = await this.post(url, { dataJ: payload });
+            return drop;
+        }
+
+        /**
+         * Removes a product from this drop's products.
+         *
+         * @memberof DropAPI
+         * @param {String} id The id of the drop.
+         * @returns {Promise} Empty response.
+         */
+        async removeProduct(id, product) {
+            const url = this.baseUrl + `drops/${id}/product/${product}`;
+            const drop = await this.delete(url);
+            return drop;
+        }
     };
 
 export default DropAPI;
