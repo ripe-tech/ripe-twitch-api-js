@@ -29,6 +29,18 @@ export const ProductDropAPI = superclass =>
             const productDrop = await this.delete(url);
             return productDrop;
         }
+
+        async likeProductDrop(id, payload) {
+            const url = this.baseUrl + `product_drops/${id}/like`;
+            const productDrop = await this.put(url, { dataJ: payload });
+            return productDrop;
+        }
+
+        async dislikeProductDrop(id, payload) {
+            const url = this.baseUrl + `product_drops/${id}/dislike`;
+            const productDrop = await this.put(url, { dataJ: payload });
+            return productDrop;
+        }
     };
 
 export default ProductDropAPI;

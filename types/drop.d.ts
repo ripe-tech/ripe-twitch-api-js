@@ -1,5 +1,7 @@
 import { APIOptions } from "yonius";
 
+import { ProductDrop, ProductDropCreate } from "./product-drop";
+
 export enum StatusDrop {
     open = "open",
     ongoing = "ongoing",
@@ -42,4 +44,6 @@ export declare class DropAPI {
     getDrop(id: string): Promise<Drop>;
     updateDrop(id: string, payload: DropPatch): Promise<Drop>;
     deleteDrop(id: string): Promise<void>;
+    createProductDropDrop(id: string, payload: ProductDropCreate): Promise<ProductDrop>;
+    deleteProductDropDrop(id: string, product: string): Promise<void>;
 }
