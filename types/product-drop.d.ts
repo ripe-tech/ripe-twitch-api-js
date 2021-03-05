@@ -27,10 +27,16 @@ export interface ProductDropPatch {
     readonly queries?: string[];
 }
 
+export interface ProductDropRating {
+    readonly viewer: string;
+}
+
 export declare class ProductDropAPI {
     listProductDrops(options: APIOptions): Promise<ProductDrop[]>;
     createProductDrop(payload: ProductDropCreate): Promise<ProductDrop>;
     getProductDrop(id: string): Promise<ProductDrop>;
     updateProductDrop(id: string, payload: ProductDropPatch): Promise<ProductDrop>;
     deleteProductDrop(id: string): Promise<void>;
+    like(id: string, payload: ProductDropRating): Promise<ProductDrop>;
+    dislike(id: string, payload: ProductDropRating): Promise<ProductDrop>;
 }
