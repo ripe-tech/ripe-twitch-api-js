@@ -30,13 +30,13 @@ export const DropAPI = superclass =>
             return drop;
         }
 
-        async addProduct(id, payload) {
+        async createProductDropDrop(id, payload) {
             const url = this.baseUrl + `drops/${id}/product`;
             const productDrop = await this.post(url, { dataJ: payload });
             return productDrop;
         }
 
-        async removeProduct(id, product) {
+        async deleteProductDropDrop(id, product) {
             const url = this.baseUrl + `drops/${id}/product/${product}`;
             const productDrop = await this.delete(url);
             return productDrop;

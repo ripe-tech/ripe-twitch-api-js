@@ -30,13 +30,13 @@ export const ProductDropAPI = superclass =>
             return productDrop;
         }
 
-        async like(id, payload) {
+        async likeProductDrop(id, payload) {
             const url = this.baseUrl + `product_drops/${id}/like`;
             const productDrop = await this.put(url, { dataJ: payload });
             return productDrop;
         }
 
-        async dislike(id, payload) {
+        async dislikeProductDrop(id, payload) {
             const url = this.baseUrl + `product_drops/${id}/dislike`;
             const productDrop = await this.put(url, { dataJ: payload });
             return productDrop;

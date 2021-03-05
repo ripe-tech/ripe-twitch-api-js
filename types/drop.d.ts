@@ -44,6 +44,6 @@ export declare class DropAPI {
     getDrop(id: string): Promise<Drop>;
     updateDrop(id: string, payload: DropPatch): Promise<Drop>;
     deleteDrop(id: string): Promise<void>;
-    addProduct(id: string, payload: ProductDropCreate): Promise<ProductDrop>;
-    removeProduct(id: string, product: string): Promise<void>;
+    createProductDropDrop(id: string, payload: ProductDropCreate): Promise<ProductDrop>;
+    deleteProductDropDrop(id: string, product: string): Promise<void>;
 }
