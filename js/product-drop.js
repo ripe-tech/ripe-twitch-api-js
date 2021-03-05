@@ -30,28 +30,12 @@ export const ProductDropAPI = superclass =>
             return productDrop;
         }
 
-        /**
-         * Adds a viewer like to the current product customization.
-         *
-         * @memberof ProductDropAPI
-         * @param {String} id The id of the product_drop.
-         * @param {Object} payload An object that contains the viewer username.
-         * @returns {Promise} The updated product.
-         */
         async like(id, payload) {
             const url = this.baseUrl + `product_drops/${id}/like`;
             const productDrop = await this.put(url, { dataJ: payload });
             return productDrop;
         }
 
-        /**
-         * Adds a viewer dislike to the current product customization.
-         *
-         * @memberof ProductDropAPI
-         * @param {String} id The id of the product_drop.
-         * @param {Object} payload An object that contains the viewer username.
-         * @returns {Promise} The updated product.
-         */
         async dislike(id, payload) {
             const url = this.baseUrl + `product_drops/${id}/dislike`;
             const productDrop = await this.put(url, { dataJ: payload });
