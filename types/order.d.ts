@@ -1,5 +1,17 @@
 import { APIOptions } from "yonius";
 
+export type Spec = {
+    brand: string;
+    model: string;
+    parts: Part[];
+    initials: string;
+    engraving: string;
+    initialsExtra: InitialsExtra;
+    variant?: string;
+    version?: string;
+    description?: string;
+};
+
 export interface Address {
     readonly firstName: string;
     readonly lastName: string;
@@ -27,9 +39,15 @@ export interface Order {
     readonly shippingAddress: Address;
     readonly billingAddress: Address;
     readonly productQuery: string;
+    readonly productSpec: Spec;
+    readonly productSizeScaled: number;
+    readonly productSize: number;
+    readonly productScale: string;
+    readonly productGender: string;
     readonly amount: number;
     readonly currency: string;
     readonly status: Status;
+    readonly ripeOrder: number;
     readonly created: number;
     readonly modified: number;
     readonly meta: Record<string, unknown>;
