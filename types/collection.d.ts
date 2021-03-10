@@ -1,11 +1,17 @@
 import { APIOptions } from "yonius";
 
+export enum StatusCollection {
+    active = "active",
+    inactive = "inactive"
+}
+
 export interface Collection {
     readonly id: string;
     readonly name: string;
     readonly brand: string;
     readonly streamers: string[];
     readonly products: string[];
+    readonly status: StatusCollection;
     readonly created: number;
     readonly modified: number;
     readonly meta: Record<string, unknown>;
@@ -17,6 +23,7 @@ export interface CollectionCreate {
     readonly brand: string;
     readonly streamers?: string[];
     readonly products?: string[];
+    readonly status?: StatusCollection;
     readonly created?: number;
     readonly modified?: number;
     readonly meta?: Record<string, unknown>;
@@ -27,6 +34,7 @@ export interface CollectionPatch {
     readonly brand?: string;
     readonly streamers?: string[];
     readonly products?: string[];
+    readonly status?: StatusCollection;
 }
 
 export declare class CollectionAPI {
