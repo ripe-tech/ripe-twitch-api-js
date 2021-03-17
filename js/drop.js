@@ -18,6 +18,12 @@ export const DropAPI = superclass =>
             return drop;
         }
 
+        async getEagerDrop(id) {
+            const url = this.baseUrl + `drops/${id}/eager`;
+            const drop = await this.get(url);
+            return drop;
+        }
+
         async updateDrop(id, payload) {
             const url = this.baseUrl + `drops/${id}`;
             const drop = await this.put(url, { dataJ: payload });
