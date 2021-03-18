@@ -1,3 +1,5 @@
+import QueryAPI from "./query";
+
 export const ProductDropAPI = superclass =>
     class extends superclass {
         async listProductDrops(options = {}) {
@@ -7,6 +9,11 @@ export const ProductDropAPI = superclass =>
         }
 
         async createProductDrop(payload) {
+            if (payload.query && typeof payload.query === "string") {
+                const query = await QueryAPI.createQuery({ query: payload.query });
+                payload.queries = [query.id];
+                delete payload.query;
+            }
             const url = this.baseUrl + "product_drops";
             const productDrop = await this.post(url, { dataJ: payload });
             return productDrop;
