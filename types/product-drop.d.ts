@@ -4,6 +4,8 @@ import { Query } from "./query";
 
 export interface ProductDrop {
     readonly id: string;
+    readonly name: string;
+    readonly drop: string;
     readonly channel: string;
     readonly productCollection: string;
     readonly query: Query;
@@ -15,6 +17,7 @@ export interface ProductDrop {
 
 export interface ProductDropCreate {
     readonly id?: number;
+    readonly name?: string;
     readonly productCollection: string;
     readonly queries: string[];
     readonly created?: number;
@@ -23,6 +26,7 @@ export interface ProductDropCreate {
 }
 
 export interface ProductDropPatch {
+    readonly name?: string;
     readonly productCollection?: string;
     readonly queries?: string[];
 }

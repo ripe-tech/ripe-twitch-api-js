@@ -38,6 +38,12 @@ export interface DropPatch {
     readonly products?: string[];
 }
 
+export interface ProductDropQueryCreate {
+    readonly name: string;
+    readonly productCollection: string;
+    readonly query: string;
+}
+
 export declare class DropAPI {
     listDrops(options: APIOptions): Promise<Drop[]>;
     createDrop(payload: DropCreate): Promise<Drop>;
@@ -45,5 +51,6 @@ export declare class DropAPI {
     updateDrop(id: string, payload: DropPatch): Promise<Drop>;
     deleteDrop(id: string): Promise<void>;
     createProductDropDrop(id: string, payload: ProductDropCreate): Promise<ProductDrop>;
+    createProductDropQueryDrop(id: string, payload: ProductDropQueryCreate): Promise<ProductDrop>;
     deleteProductDropDrop(id: string, product: string): Promise<void>;
 }
