@@ -29,6 +29,18 @@ export const CollectionAPI = superclass =>
             const collection = await this.delete(url);
             return collection;
         }
+
+        async createProductCollectionCollection(id, payload) {
+            const url = this.baseUrl + `collections/${id}/product`;
+            const productCollection = await this.post(url, { dataJ: payload });
+            return productCollection;
+        }
+
+        async deleteProductCollectionCollection(id, product) {
+            const url = this.baseUrl + `collections/${id}/product/${product}`;
+            const productCollection = await this.delete(url);
+            return productCollection;
+        }
     };
 
 export default CollectionAPI;
