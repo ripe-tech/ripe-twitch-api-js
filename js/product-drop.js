@@ -1,5 +1,3 @@
-import QueryAPI from "./query";
-
 export const ProductDropAPI = superclass =>
     class extends superclass {
         async listProductDrops(options = {}) {
