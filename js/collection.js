@@ -41,6 +41,18 @@ export const CollectionAPI = superclass =>
             const productCollection = await this.delete(url);
             return productCollection;
         }
+
+        async addStreamerCollection(id, payload) {
+            const url = this.baseUrl + `collections/${id}/streamer`;
+            const collection = await this.post(url, { dataJ: payload });
+            return collection;
+        }
+
+        async removeStreamerCollection(id, streamer) {
+            const url = this.baseUrl + `collections/${id}/streamer/${streamer}`;
+            const collection = await this.delete(url);
+            return collection;
+        }
     };
 
 export default CollectionAPI;
