@@ -1,5 +1,7 @@
 import { APIOptions } from "yonius";
 
+import { Streamer } from "./streamer";
+
 export enum StatusCollection {
     active = "active",
     inactive = "inactive"
