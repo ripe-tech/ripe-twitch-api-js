@@ -18,6 +18,12 @@ export const CollectionAPI = superclass =>
             return collection;
         }
 
+        async getEagerCollection(id) {
+            const url = this.baseUrl + `collections/${id}/eager`;
+            const collection = await this.get(url);
+            return collection;
+        }
+
         async updateCollection(id, payload) {
             const url = this.baseUrl + `collections/${id}`;
             const collection = await this.put(url, { dataJ: payload });
