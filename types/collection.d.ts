@@ -1,5 +1,7 @@
 import { APIOptions } from "yonius";
 
+import { ProductCollection, ProductCollectionCreate } from "./product-collection";
+
 export enum StatusCollection {
     active = "active",
     inactive = "inactive"
@@ -43,4 +45,6 @@ export declare class CollectionAPI {
     getCollection(id: string): Promise<Collection>;
     updateCollection(id: string, payload: CollectionPatch): Promise<Collection>;
     deleteCollection(id: string): Promise<void>;
+    createProductCollectionCollection(id: string, payload: ProductCollectionCreate): Promise<ProductCollection>;
+    deleteProductCollectionCollection(id: string, product: string): Promise<void>;
 }
