@@ -47,4 +47,6 @@ export declare class CollectionAPI {
     deleteCollection(id: string): Promise<void>;
     createProductCollectionCollection(id: string, payload: ProductCollectionCreate): Promise<ProductCollection>;
     deleteProductCollectionCollection(id: string, product: string): Promise<void>;
+    addStreamerCollection(id: string, payload: { streamer: string }): Promise<Collection>;
+    removeStreamerCollection(id: string, streamer: string): Promise<void>;
 }
