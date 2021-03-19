@@ -1,6 +1,6 @@
 import { APIOptions } from "yonius";
 
-import { ProductCollection } from "./product-collection";
+import { ProductCollection, ProductCollectionCreate } from "./product-collection";
 import { Streamer } from "./streamer";
 
 export enum StatusCollection {
@@ -49,4 +49,6 @@ export declare class CollectionAPI {
     getEagerCollection(id: string): Promise<CollectionEager>;
     updateCollection(id: string, payload: CollectionPatch): Promise<Collection>;
     deleteCollection(id: string): Promise<void>;
+    createProductCollectionCollection(id: string, payload: ProductCollectionCreate): Promise<ProductCollection>;
+    deleteProductCollectionCollection(id: string, product: string): Promise<void>;
 }
