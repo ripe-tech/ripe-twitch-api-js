@@ -1,5 +1,8 @@
 import { APIOptions } from "yonius";
 
+import { ProductCollection } from "./product-collection";
+import { Streamer } from "./streamer";
+
 export enum StatusCollection {
     active = "active",
     inactive = "inactive"
@@ -37,10 +40,13 @@ export interface CollectionPatch {
     readonly status?: StatusCollection;
 }
 
+export type CollectionEager = Omit<Collection, "products" | "streamers"> & { streamers: Streamer[], products: ProductCollection[] }
+
 export declare class CollectionAPI {
     listCollections(options: APIOptions): Promise<Collection[]>;
     createCollection(payload: CollectionCreate): Promise<Collection>;
     getCollection(id: string): Promise<Collection>;
+    getEagerCollection(id: string): Promise<CollectionEager>;
     updateCollection(id: string, payload: CollectionPatch): Promise<Collection>;
     deleteCollection(id: string): Promise<void>;
 }
