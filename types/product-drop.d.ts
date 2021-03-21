@@ -41,6 +41,7 @@ export declare class ProductDropAPI {
     getProductDrop(id: string): Promise<ProductDrop>;
     updateProductDrop(id: string, payload: ProductDropPatch): Promise<ProductDrop>;
     deleteProductDrop(id: string): Promise<void>;
+    addQueryProductDrop(id: string, payload: Query): Promise<Query>;
     likeProductDrop(id: string, payload: ProductDropRating): Promise<ProductDrop>;
     dislikeProductDrop(id: string, payload: ProductDropRating): Promise<ProductDrop>;
 }
