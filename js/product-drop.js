@@ -31,7 +31,7 @@ export const ProductDropAPI = superclass =>
         }
 
         async addQueryProductDrop(id, payload) {
-            const url = this.baseUrl + `product_drops/${id}/query`;
+            const url = this.baseUrl + `product_drops/${id}/queries`;
             const productDrop = await this.post(url, { dataJ: payload });
             return productDrop;
         }
