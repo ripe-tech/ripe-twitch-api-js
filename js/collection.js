@@ -37,25 +37,25 @@ export const CollectionAPI = superclass =>
         }
 
         async createProductCollectionCollection(id, payload) {
-            const url = this.baseUrl + `collections/${id}/product`;
+            const url = this.baseUrl + `collections/${id}/products`;
             const productCollection = await this.post(url, { dataJ: payload });
             return productCollection;
         }
 
         async deleteProductCollectionCollection(id, product) {
-            const url = this.baseUrl + `collections/${id}/product/${product}`;
+            const url = this.baseUrl + `collections/${id}/products/${product}`;
             const productCollection = await this.delete(url);
             return productCollection;
         }
 
         async addStreamerCollection(id, payload) {
-            const url = this.baseUrl + `collections/${id}/streamer`;
+            const url = this.baseUrl + `collections/${id}/streamers`;
             const collection = await this.post(url, { dataJ: payload });
             return collection;
         }
 
         async removeStreamerCollection(id, streamer) {
-            const url = this.baseUrl + `collections/${id}/streamer/${streamer}`;
+            const url = this.baseUrl + `collections/${id}/streamers/${streamer}`;
             const collection = await this.delete(url);
             return collection;
         }

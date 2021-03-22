@@ -37,7 +37,7 @@ export const DropAPI = superclass =>
         }
 
         async createProductDropDrop(id, payload) {
-            const url = this.baseUrl + `drops/${id}/product`;
+            const url = this.baseUrl + `drops/${id}/products`;
             const productDrop = await this.post(url, { dataJ: payload });
             return productDrop;
         }
@@ -49,7 +49,7 @@ export const DropAPI = superclass =>
         }
 
         async deleteProductDropDrop(id, product) {
-            const url = this.baseUrl + `drops/${id}/product/${product}`;
+            const url = this.baseUrl + `drops/${id}/products/${product}`;
             const productDrop = await this.delete(url);
             return productDrop;
         }
