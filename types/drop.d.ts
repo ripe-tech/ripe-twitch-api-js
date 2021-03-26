@@ -4,6 +4,7 @@ import { ProductDrop, ProductDropCreate } from "./product-drop";
 
 export enum StatusDrop {
     open = "open",
+    feedback = "feedback",
     ongoing = "ongoing",
     closed = "closed"
 }
