@@ -42,12 +42,6 @@ export const DropAPI = superclass =>
             return productDrop;
         }
 
-        async createProductDropQueryDrop(id, payload) {
-            const url = this.baseUrl + `drops/${id}/product_query`;
-            const productDrop = await this.post(url, { dataJ: payload });
-            return productDrop;
-        }
-
         async deleteProductDropDrop(id, product) {
             const url = this.baseUrl + `drops/${id}/products/${product}`;
             const productDrop = await this.delete(url);

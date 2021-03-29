@@ -5,10 +5,10 @@ import { DropAPI } from "./drop";
 import { OrderAPI } from "./order";
 import { ProductCollectionAPI } from "./product-collection";
 import { ProductDropAPI } from "./product-drop";
-import { QueryAPI } from "./query";
+import { ProductDropFeedbackAPI } from "./product-drop-feedback";
 import { StreamerAPI } from "./streamer";
 
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "https://ripe-twitch-ci.platforme.com/"; // "http://localhost:3030/";
 
 export class API extends mix(BaseAPI).with(
     BrandAPI,
@@ -17,7 +17,7 @@ export class API extends mix(BaseAPI).with(
     OrderAPI,
     ProductCollectionAPI,
     ProductDropAPI,
-    QueryAPI,
+    ProductDropFeedbackAPI,
     StreamerAPI
 ) {
     constructor(kwargs = {}) {

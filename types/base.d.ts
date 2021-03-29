@@ -4,7 +4,7 @@ import { DropAPI } from "./drop";
 import { OrderAPI } from "./order";
 import { ProductCollectionAPI } from "./product-collection";
 import { ProductDropAPI } from "./product-drop";
-import { QueryAPI } from "./query";
+import { ProduuctDropFeedbackAPI } from "./product-drop-feedback";
 import { StreamerAPI } from "./streamer";
 
 export interface API extends BrandAPI,
@@ -13,7 +13,7 @@ export interface API extends BrandAPI,
     OrderAPI,
     ProductCollectionAPI,
     ProductDropAPI,
-    QueryAPI,
+    ProduuctDropFeedbackAPI,
     StreamerAPI { }
 
 export declare class API implements API {

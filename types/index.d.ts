@@ -5,5 +5,4 @@ export * from "./drop";
 export * from "./order";
 export * from "./product-collection";
 export * from "./product-drop";
-export * from "./query";
 export * from "./streamer";
