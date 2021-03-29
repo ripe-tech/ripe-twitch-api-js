@@ -51,12 +51,6 @@ export class API extends mix(BaseAPI).with(
         const contents = await this.get(url);
         return contents;
     }
-
-    set(kwargs = {}) {
-        this.baseUrl = kwargs.baseUrl === undefined ? this.baseUrl : kwargs.baseUrl;
-        this.token = kwargs.token === undefined ? this.token : kwargs.token;
-        this.tokenTwitch = kwargs.tokenTwitch === undefined ? this.tokenTwitch : kwargs.tokenTwitch;
-    }
 }
 
 export default API;
