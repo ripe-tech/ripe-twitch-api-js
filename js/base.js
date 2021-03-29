@@ -41,8 +41,9 @@ export class API extends mix(BaseAPI).with(
         delete options.kwargs.auth;
         if (auth) {
             if (this.token) options.headers.Authorization = `Bearer ${this.token}`;
-            if (this.tokenTwitch)
-                { options.headers.AuthorizationTwitch = `Bearer ${this.tokenTwitch}`; }
+            if (this.tokenTwitch) {
+                options.headers.AuthorizationTwitch = `Bearer ${this.tokenTwitch}`;
+            }
         }
     }
 
