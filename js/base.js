@@ -26,6 +26,7 @@ export class API extends mix(BaseAPI).with(
         this.token = conf("TOKEN", null);
         this.baseUrl = kwargs.baseUrl === undefined ? this.baseUrl : kwargs.baseUrl;
         this.token = kwargs.token === undefined ? this.token : kwargs.token;
+        this.tokenTwitch = kwargs.tokenTwitch === undefined ? null : kwargs.tokenTwitch;
     }
 
     static async load() {
@@ -39,7 +40,10 @@ export class API extends mix(BaseAPI).with(
         const auth = options.kwargs.auth === undefined ? true : options.kwargs.auth;
         delete options.kwargs.auth;
         if (auth) {
-            options.headers.Authorization = `Bearer ${this.token}`;
+            if (this.token) options.headers.Authorization = `Bearer ${this.token}`;
+            if (this.tokenTwitch) {
+                options.headers.AuthorizationTwitch = `Bearer ${this.tokenTwitch}`;
+            }
         }
     }
 
