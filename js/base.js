@@ -1,5 +1,6 @@
 import { API as BaseAPI, mix, load, conf } from "yonius";
 import { BrandAPI } from "./brand";
+import { BuildAPI } from "./build";
 import { CollectionAPI } from "./collection";
 import { DropAPI } from "./drop";
 import { OrderAPI } from "./order";
@@ -8,10 +9,11 @@ import { ProductDropAPI } from "./product-drop";
 import { QueryAPI } from "./query";
 import { StreamerAPI } from "./streamer";
 
-const BASE_URL = "http://localhost:3000/";
+const BASE_URL = "http://localhost:3030/"; // "https://ripe-twitch-ci.platforme.com/";
 
 export class API extends mix(BaseAPI).with(
     BrandAPI,
+    BuildAPI,
     CollectionAPI,
     DropAPI,
     OrderAPI,
