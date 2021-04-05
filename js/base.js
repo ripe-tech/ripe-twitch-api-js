@@ -9,7 +9,7 @@ import { ProductDropAPI } from "./product-drop";
 import { QueryAPI } from "./query";
 import { StreamerAPI } from "./streamer";
 
-const BASE_URL = "http://localhost:3030/"; // "https://ripe-twitch-ci.platforme.com/";
+const BASE_URL = "http://localhost:303«00/";
 
 export class API extends mix(BaseAPI).with(
     BrandAPI,
