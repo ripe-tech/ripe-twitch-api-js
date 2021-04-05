@@ -1,5 +1,6 @@
 import { API as BaseAPI, mix, load, conf } from "yonius";
 import { BrandAPI } from "./brand";
+import { BuildAPI } from "./build";
 import { CollectionAPI } from "./collection";
 import { DropAPI } from "./drop";
 import { OrderAPI } from "./order";
@@ -12,6 +13,7 @@ const BASE_URL = "http://localhost:3000/";
 
 export class API extends mix(BaseAPI).with(
     BrandAPI,
+    BuildAPI,
     CollectionAPI,
     DropAPI,
     OrderAPI,

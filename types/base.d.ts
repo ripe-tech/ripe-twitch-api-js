@@ -1,4 +1,5 @@
 import { BrandAPI } from "./brand";
+import { BuilddAPI } from "./build";
 import { CollectionAPI } from "./collection";
 import { DropAPI } from "./drop";
 import { OrderAPI } from "./order";
@@ -8,6 +9,7 @@ import { QueryAPI } from "./query";
 import { StreamerAPI } from "./streamer";
 
 export interface API extends BrandAPI,
+    BuilddAPI,
     CollectionAPI,
     DropAPI,
     OrderAPI,
