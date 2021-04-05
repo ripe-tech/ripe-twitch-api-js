@@ -1,5 +1,6 @@
 export * from "./base";
 export * from "./brand";
+export * from "./build";
 export * from "./collection";
 export * from "./drop";
 export * from "./order";
