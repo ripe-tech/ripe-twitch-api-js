@@ -1,9 +1,9 @@
 import { APIOptions } from "yonius";
 
 export enum FeedbackState {
-    none = 0,
-    like = 1,
-    dislike = -1
+    none = "none",
+    like = "like",
+    dislike = "dislike"
 }
 
 export interface ProductDropFeedback {
