@@ -8,7 +8,7 @@ import { ProductDropAPI } from "./product-drop";
 import { ProductDropFeedbackAPI } from "./product-drop-feedback";
 import { StreamerAPI } from "./streamer";
 
-const BASE_URL = "http://localhost:3030/";
+const BASE_URL = "http://localhost:3000/";
 
 export class API extends mix(BaseAPI).with(
     BrandAPI,
