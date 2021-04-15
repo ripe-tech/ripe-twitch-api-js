@@ -8,7 +8,6 @@ import { ProductCollectionAPI } from "./product-collection";
 import { ProductDropAPI } from "./product-drop";
 import { ProductDropFeedbackAPI } from "./product-drop-feedback";
 import { PusherTriggerAPI } from "./pusher-trigger";
-import { QueryAPI } from "./query";
 import { StreamerAPI } from "./streamer";
 
 const BASE_URL = "http://localhost:3000/";
@@ -23,7 +22,6 @@ export class API extends mix(BaseAPI).with(
     ProductDropAPI,
     ProductDropFeedbackAPI,
     PusherTriggerAPI,
-    QueryAPI,
     StreamerAPI
 ) {
     constructor(kwargs = {}) {
