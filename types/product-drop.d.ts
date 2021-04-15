@@ -1,15 +1,14 @@
 import { APIOptions } from "yonius";
 
-import { Query } from "./query";
-
 export interface ProductDrop {
     readonly id: string;
     readonly name: string;
     readonly drop: string;
     readonly channel: string;
     readonly productCollection: string;
-    readonly query: Query;
-    readonly queries: string[];
+    readonly query: string;
+    readonly likes: number;
+    readonly dislikes: number;
     readonly created: number;
     readonly modified: number;
     readonly meta: Record<string, unknown>;
@@ -19,7 +18,9 @@ export interface ProductDropCreate {
     readonly id?: number;
     readonly name?: string;
     readonly productCollection: string;
-    readonly queries: string[];
+    readonly query: string;
+    readonly likes?: number;
+    readonly dislikes?: number;
     readonly created?: number;
     readonly modified?: number;
     readonly meta?: Record<string, unknown>;
@@ -28,7 +29,9 @@ export interface ProductDropCreate {
 export interface ProductDropPatch {
     readonly name?: string;
     readonly productCollection?: string;
-    readonly queries?: string[];
+    readonly query?: string;
+    readonly likes?: number;
+    readonly dislikes?: number;
 }
 
 export interface ProductDropRating {
@@ -41,7 +44,6 @@ export declare class ProductDropAPI {
     getProductDrop(id: string): Promise<ProductDrop>;
     updateProductDrop(id: string, payload: ProductDropPatch): Promise<ProductDrop>;
     deleteProductDrop(id: string): Promise<void>;
-    addQueryProductDrop(id: string, payload: Query): Promise<Query>;
     likeProductDrop(id: string, payload: ProductDropRating): Promise<ProductDrop>;
     dislikeProductDrop(id: string, payload: ProductDropRating): Promise<ProductDrop>;
 }
