@@ -1,5 +1,6 @@
 import { API as BaseAPI, mix, load, conf } from "yonius";
 import { BrandAPI } from "./brand";
+import { BuildAPI } from "./build";
 import { CollectionAPI } from "./collection";
 import { DropAPI } from "./drop";
 import { OrderAPI } from "./order";
@@ -12,6 +13,7 @@ const BASE_URL = "http://localhost:3000/";
 
 export class API extends mix(BaseAPI).with(
     BrandAPI,
+    BuildAPI,
     CollectionAPI,
     DropAPI,
     OrderAPI,
@@ -26,6 +28,7 @@ export class API extends mix(BaseAPI).with(
         this.token = conf("TOKEN", null);
         this.baseUrl = kwargs.baseUrl === undefined ? this.baseUrl : kwargs.baseUrl;
         this.token = kwargs.token === undefined ? this.token : kwargs.token;
+        this.tokenTwitch = kwargs.tokenTwitch === undefined ? null : kwargs.tokenTwitch;
     }
 
     static async load() {
@@ -39,7 +42,10 @@ export class API extends mix(BaseAPI).with(
         const auth = options.kwargs.auth === undefined ? true : options.kwargs.auth;
         delete options.kwargs.auth;
         if (auth) {
-            options.headers.Authorization = `Bearer ${this.token}`;
+            if (this.token) options.headers.Authorization = `Bearer ${this.token}`;
+            if (this.tokenTwitch) {
+                options.headers.AuthorizationTwitch = `Bearer ${this.tokenTwitch}`;
+            }
         }
     }
 
