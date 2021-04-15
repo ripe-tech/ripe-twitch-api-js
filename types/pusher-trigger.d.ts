@@ -4,6 +4,6 @@ export interface PusherTrigger {
     readonly payload: string;
 }
 
-export declare class ProductDropAPI {
+export declare class PusherTriggerAPI {
     pusherTrigger(payload: PusherTrigger): Promise<any>;
 }
