@@ -33,7 +33,7 @@ export interface ProductDropFeedbackPatch {
     readonly state?: FeedbackState;
 }
 
-export declare class ProductDropAPI {
+export declare class ProductDropFeedbackAPI {
     listProductDropFeedbacks(options: APIOptions): Promise<ProductDropFeedback[]>;
     createProductDropFeedback(payload: ProductDropFeedbackCreate): Promise<ProductDropFeedback>;
     getProductDropFeedback(id: string): Promise<ProductDropFeedback>;
