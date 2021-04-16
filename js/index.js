@@ -6,5 +6,4 @@ export * from "./order";
 export * from "./product-collection";
 export * from "./product-drop";
 export * from "./product-drop-feedback";
-export * from "./pusher-trigger";
 export * from "./streamer";
