@@ -4,6 +4,11 @@ export interface PusherTrigger {
     readonly payload: string;
 }
 
+export interface PusherTriggerResponse {
+    readonly size: number;
+    readonly timeout: number;
+}
+
 export declare class PusherTriggerAPI {
-    pusherTrigger(payload: PusherTrigger): Promise<any>;
+    pusherTrigger(payload: PusherTrigger): Promise<PusherTriggerResponse>;
 }
