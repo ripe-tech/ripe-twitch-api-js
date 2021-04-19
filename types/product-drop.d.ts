@@ -1,4 +1,3 @@
-import { Response } from "node-fetch";
 import { APIOptions } from "yonius";
 
 export interface ProductDrop {
@@ -47,5 +46,5 @@ export declare class ProductDropAPI {
     deleteProductDrop(id: string): Promise<void>;
     likeProductDrop(id: string, payload: ProductDropRating): Promise<ProductDrop>;
     dislikeProductDrop(id: string, payload: ProductDropRating): Promise<ProductDrop>;
-    triggerEventProductDrop(id: string, event:string, payload: string): Promise<Response>;
+    triggerEventProductDrop(id: string, event:string, payload: string): Promise<void>;
 }
