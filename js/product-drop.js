@@ -41,6 +41,11 @@ export const ProductDropAPI = superclass =>
             const productDrop = await this.put(url, { dataJ: payload });
             return productDrop;
         }
+
+        async triggerEventProductDrop(id, event, payload) {
+            const url = this.baseUrl + `product_drops/${id}/event/${event}`;
+            await this.post(url, { dataJ: { payload: payload } });
+        }
     };
 
 export default ProductDropAPI;

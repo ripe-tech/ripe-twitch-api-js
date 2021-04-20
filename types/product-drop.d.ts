@@ -46,4 +46,5 @@ export declare class ProductDropAPI {
     deleteProductDrop(id: string): Promise<void>;
     likeProductDrop(id: string, payload: ProductDropRating): Promise<ProductDrop>;
     dislikeProductDrop(id: string, payload: ProductDropRating): Promise<ProductDrop>;
+    triggerEventProductDrop(id: string, event:string, payload: string): Promise<void>;
 }
