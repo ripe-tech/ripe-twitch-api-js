@@ -19,6 +19,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 *
 
+## [0.2.4] - 2021-04-28
+
+### Added
+
+* New event trigger methods
+
+### Changed
+
+* Adapted to the new data model
+
 ## [0.2.3] - 2021-04-13
 
 ### Added
